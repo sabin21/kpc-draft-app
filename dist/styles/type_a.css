@@ -1,4 +1,7 @@
 
 .header {
   position: absolute; width:100%; height: 112px; background:black; left:0; top:0;
+  >.inner-wrap{
+    width:100%;
+  }
 }
