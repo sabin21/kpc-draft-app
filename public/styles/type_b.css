@@ -1,6 +1,9 @@
+body{
+  overflow-x: hidden;
+}
 
 .header {
-  position: absolute; width:100%; height: 112px; left:0; top:0;
+  position: absolute; width:100%; height: 112px; left:0; top:0; z-index: 9999;
   >.inner-wrap{
     width:100%; position: relative; padding: 0 80px; display: flex; height:100%;
     justify-content: space-between; align-items: center;
@@ -35,60 +38,66 @@
   }
 }
 .section-hero{
-  height:100vh; min-height: 900px; display: flex; align-items: center; padding-left: 80px;
-  >.hero-links-wrap{
-    width:228px; position: relative; display: flex; flex-direction: column; margin-top: 5vh;
-    >.link-item{
-      width:228px;
-    }
-  }
-  >.hero-slide-wrap{
-    position: absolute; width: calc(100% - 320px); height:100%; right:0; overflow: hidden;
-    >.slide{
-      position: relative; width:100%; height: 100%; display: flex; align-items: center;
-      padding-left: 120px;
-      >.headline-wrap{
-        width:640px;
-        >img{ width: 100%; max-width: 100%;}
+  height:100vh; display: flex; padding: 130px 80px 0px 80px;
+  >.hero-wrap{
+    width:100%; display:flex; gap: 16px;
+    >.video-wrap{
+      position: relative; width:100%; height: 100%; max-height: 780px; overflow: hidden;
+      border-radius: 20px;
+      &::after{
+          content:''; position: absolute; width: 100%; height: 100%;
+          left:0; top:0; background-color: rgba(0,0,0,0.35);
+        }
+      >.video{
+        position: relative;
+        width: 100%; height: 100%; object-fit: cover; overflow:hidden;
+        
+        
       }
-      >.video-wrap{
-        width:50vw; height: 60vh;
-        /* border: 2px solid red; */
-        >.video{
-          width: 100%; height: 100%; object-fit: cover;
-        }
-        #hero-video-1{
-          clip-path: url(#video-mask-1);
-          /* -webkit-clip-path: url(#video-mask-1); */
-        }
-        >.video-mask{
-          position: absolute; top:0; left:0; right:0; bottom: 0; width: 100%;
-        }
+      >.hero-headline{
+        position: absolute; width:100%; bottom:56px; left: 56px; z-index: 5;
+        >img{ width:100%; max-width: 1200px;}
       }
     }
+    >.right-link{
+      width:366px;
+      >img{ width:100%; min-width: 366px;}
+    }
   }
+  
+  
 }
 
 .section-1{
-  position: relative; margin: 0 auto; text-align: center; padding-bottom: 300px;
-  >.content-full{
-    width:100%; max-width: 1520px; position: relative; margin: 0 auto;
+  position: relative; margin: 0 auto; text-align: center; padding-bottom: 200px; display: flex; 
+  flex-direction: column; justify-content: center; align-items: center;
+  >.title{
+    width:100%; max-width: 1520px; padding-bottom: 80px;
+    >img{ width:100%;}
+  }
+  >.cards-wrap{
+    width:100%; overflow: hidden; display: flex; gap: 32px;
   }
 }
 
 .section-2{
+  display: flex; justify-content: center; padding-bottom: 160px;
+  >.content-full{ width:100%; max-width: 1520px;}
+
+}
+.section-3{
   background-color: var(--color-gray-900); min-height: 100vh;
   text-align: center; overflow: hidden; display: flex; flex-direction: column; justify-content: center;
   gap: 100px;
-  >.content-overflow{
-    width:120%; max-width: auto;
-  }
-}
-
-.section-3, .section-4{
-  display: flex; justify-content: center; padding: 120px 0 ;
 }
 .section-4{
-  padding-bottom: 200px;
+  display: flex; justify-content: center; padding: 160px 0 220px 0;
+}
+
+.section-edu{
+  display: flex; justify-content: center; padding: 150px 40px 200px 40px;
+  >.content-full{
+    max-width: 1840px;
+  }
 }
 
